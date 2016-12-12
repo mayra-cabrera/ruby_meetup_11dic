@@ -2,8 +2,8 @@ require 'ripper'
 require 'pp'
 code = <<STR
 10.times do |n|
-  puts n
+puts n/4+6n
 end
 STR
 puts code
-pp Ripper.sexp(code)
+pp Ripper.lex(code)
