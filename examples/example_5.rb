@@ -1,9 +1,4 @@
-require 'ripper'
-require 'pp'
-code = <<STR
-10.times do |n|
-puts n
-end
-STR
-puts code
-pp Ripper.sexp(code)
+code = <<END
+puts 2+2
+END
+puts RubyVM::InstructionSequence.compile(code).disasm
